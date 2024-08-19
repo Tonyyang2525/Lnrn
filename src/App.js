@@ -8,6 +8,7 @@ import Accounts from "./components/pages/account";
 import Quiz from "./components/pages/quiz";
 import "materialize-css/dist/css/materialize.min.css";
 import Questions from "./components/pages/questions";
+import Results from "./components/pages/results";
 function App() {
   return (
     <div>
@@ -19,6 +20,7 @@ function App() {
             <Route path="/account" element={<Accounts />} />
             <Route path="/quiz" element={<Quiz />} />
             <Route path="/questions" element={<Questions />} />
+            <Route path="/results" element={<Results />} />
           </Routes>
         </div>
         <Footer />

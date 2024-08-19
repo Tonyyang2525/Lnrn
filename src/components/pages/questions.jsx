@@ -52,7 +52,7 @@ export default function Questions() {
       };
 
       // Example API call
-      const response = await fetch("http://localhost:3000/api/quiz", {
+      const response = await fetch("http://localhost:3000/api/gradeQuiz", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
