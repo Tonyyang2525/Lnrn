@@ -10,22 +10,22 @@ You are a QuizGenerator as such you will generate a quiz based on the Users give
 When generating the quiz you will provide the user the quiz in the following format:
 
 Quiz: {
-  Topic: "Give the topic of the quiz",
-  Expertise: "Give the expertise of the quiz",
-  NumberOfQuestions: "Give the number of questions in the quiz",
-  StyleOfQuestion: "Give the style of question in the quiz",
+  Topic: 'Give the topic of the quiz',
+  Expertise: 'Give the expertise of the quiz',
+  NumberOfQuestions: 'Give the number of questions in the quiz',
+  StyleOfQuestion: 'Give the style of question in the quiz',
   Questions: [
     {
-      Question: "Give the question",
-      Answer: "Give the answer",
-      UserAnswer: "Leave blank",
-      Source: "Give the source of the answer",
+      Question: 'Give the question',
+      Answer: 'Give the answer',
+      UserAnswer: 'Leave blank',
+      Source: 'Give the source of the answer',
     },
     {
-      Question: "Give the question",
-      Answer: "Give the answer",
-      UserAnswer: "Leave blank",
-      Source: "Give the source of the answer",
+      Question: 'Give the question',
+      Answer: 'Give the answer',
+      UserAnswer: 'Leave blank',
+      Source: 'Give the source of the answer',
     },
   ],
 }
@@ -33,32 +33,38 @@ Quiz: {
 When prompted you will compare the user's answer and the correct answer and provide the user the result of the quiz in the following format: 
 
 Quiz: {
-  Topic: "Give the topic of the quiz",
-  Expertise: "Give the expertise of the quiz",
-  NumberOfQuestions: "Give the number of questions in the quiz",
-  StyleOfQuestion: "Give the style of question in the quiz",
+  Topic: 'Give the topic of the quiz',
+  Expertise: 'Give the expertise of the quiz',
+  NumberOfQuestions: 'Give the number of questions in the quiz',
+  StyleOfQuestion: 'Give the style of question in the quiz',
   Questions: [
     {
-      Question: "Give the question",
+      Question: 'Give the question',
       Answer: {
         Passed: True|False,
-        Answer: "Give the answer",
-        UserAnswer: "Give the user's answer",
-        Reason: "Give the reasoning for the answer",
-        Source: "Give the source of the answer",
+        Answer: 'Give the answer',
+        UserAnswer: 'Give the user's answer',
+        Reason: 'Give the reasoning for the answer',
+        Source: 'Give the source of the answer',
       },
     },
     {
-      Question: "Give the question",
+      Question: 'Give the question',
       Answer: {
         Passed: True|False,
-        Answer: "Give the answer",
-        UserAnswer: "Give the user's answer",
-        Reason: "Give the reasoning for the answer",
-        Source: "Give the source of the answer",
+        Answer: 'Give the answer',
+        UserAnswer: 'Give the user's answer',
+        Reason: 'Give the reasoning for the answer',
+        Source: 'Give the source of the answer',
       },
     },
   ],
+
+  Grade: {
+    Score: 'Give the score',
+    Total: 'Give the total number of questions',
+    Percentage: 'Give the percentage of the score',
+  },
 }
 `;
 
@@ -92,7 +98,7 @@ const Quiz = {
     res.json({ resluts: chatCompletion.choices[0].message.content });
   },
   gradeQuiz: async (req, res) => {
-    const { Quiz, UserAnswers } = req.body;
+    const { Quiz } = req.body;
     const chatCompletion = await openai.chat.completions.create({
       messages: [
         {
@@ -103,7 +109,6 @@ const Quiz = {
           role: "user",
           content: `Grade the following quiz:
           Quiz: ${Quiz}
-          UserAnswers: ${UserAnswers}
           `,
         },
       ],
