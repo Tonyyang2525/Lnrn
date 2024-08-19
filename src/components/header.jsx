@@ -1,17 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function header() {
   return (
     <nav>
       <div class="nav-wrapper blue">
-        <div class="brand-logo">Lrnr</div>
+        <Link to="/"><h1>Lrnr</h1></Link>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li>
-            <a href="sass.html">Account</a>
-          </li>
-          <li>
-            <a href="badges.html">Quiz Generation</a>
-          </li>
+          <Link to="/account"><li>Account</li></Link>
+          <Link to="/quiz"><li>Quiz</li></Link>
         </ul>
       </div>
     </nav>

@@ -95,7 +95,7 @@ const Quiz = {
       model: "gpt-4o-mini",
     });
     console.log(chatCompletion.choices[0].message.content);
-    res.json({ resluts: chatCompletion.choices[0].message.content });
+    res.json({ results: chatCompletion.choices[0].message.content });
   },
   gradeQuiz: async (req, res) => {
     const { Quiz } = req.body;
@@ -115,7 +115,7 @@ const Quiz = {
       model: "gpt-4o-mini",
     });
     console.log(chatCompletion.choices[0].message.content);
-    res.json({ resluts: chatCompletion.choices[0].message.content });
+    res.json({ results: chatCompletion.choices[0].message.content });
   },
 };
 

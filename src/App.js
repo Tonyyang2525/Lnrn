@@ -13,17 +13,17 @@ function App() {
   return (
     <div>
       <Router>
-        <Header />
+        <Header/>
         <div className="pages">
           <Routes>
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/account" element={<Accounts />} />
             <Route path="/quiz" element={<Quiz />} />
             <Route path="/questions" element={<Questions />} />
             <Route path="/results" element={<Results />} />
           </Routes>
         </div>
-        <Footer />
+        <Footer/>
       </Router>
     </div>
   );
