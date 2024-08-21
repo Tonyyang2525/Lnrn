@@ -20,6 +20,7 @@ export default function Questions() {
 
   // Get the questions from quizData
   const questions = quizData.Questions;
+  quizData.Topic = "Javascript";
 
   // Handle changes to the user input
   const handleAnswerChange = (e) => {
@@ -37,6 +38,8 @@ export default function Questions() {
     // Ideally, send userAnswer to your backend API to grade it
     try {
       const currentQuestion = questions[currentQuestionIndex];
+      quizData.Questions[currentQuestionIndex].UserAnswer = userAnswer;
+
       console.log(questions);
       const quiz = {
         Topic: quizData.Topic,
@@ -52,20 +55,20 @@ export default function Questions() {
         })),
       };
       console.log("Grading quiz:", quiz);
-
+      console.log("Quwstion:", quiz.Questions[currentQuestionIndex]);
       // Example API call
-      const response = await fetch("http://localhost:3000/api/gradeQuiz", {
+      const response = await fetch("http://localhost:3000/api/gradeQuestion", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           Quiz: quiz,
-          UserAnswers: { [currentQuestionIndex]: userAnswer },
+          Question: quiz.Questions[currentQuestionIndex],
         }),
       });
 
       const data = await response.json();
       console.log("Quiz results:", data.results);
-      setQuizResults(data.results);
+      setQuizResults(JSON.parse(data.results));
       setShowResults(true);
     } catch (error) {
       setFeedback("An error occurred while grading the answer.");
@@ -91,7 +94,7 @@ export default function Questions() {
       setShowResults(false);
     }
   };
-
+  console.log(quizResults);
   return (
     <div className="questions-container">
       <h1>
@@ -113,33 +116,30 @@ export default function Questions() {
         SUBMIT ANSWER
       </button>
       {feedback && <p>{feedback}</p>}
-      {console.log(quizResults)}
       {showResults && quizResults && (
         <div className="results-section">
           <h3>Results</h3>
-          {quizResults.Questions.map((q, index) => (
-            <div key={index} className="result">
-              <p>
-                <strong>Question:</strong> {q.Question}
-              </p>
-              <p>
-                <strong>Your Answer:</strong> {q.Answer.UserAnswer}
-              </p>
-              <p>
-                <strong>Correct Answer:</strong> {q.Answer.Answer}
-              </p>
-              <p>
-                <strong>Result:</strong>{" "}
-                {q.Answer.Passed ? "Correct" : "Incorrect"}
-              </p>
-              <p>
-                <strong>Reason:</strong> {q.Answer.Reason}
-              </p>
-              <p>
-                <strong>Source:</strong> {q.Answer.Source}
-              </p>
-            </div>
-          ))}
+          <div className="result">
+            <p>
+              <strong>Question:</strong> {quizResults.Question}
+            </p>
+            <p>
+              <strong>Your Answer:</strong> {quizResults.UserAnswer}
+            </p>
+            <p>
+              <strong>Correct Answer:</strong> {quizResults.Answer}
+            </p>
+            <p>
+              <strong>Result:</strong>{" "}
+              {quizResults.Passed ? "Correct" : "Incorrect"}
+            </p>
+            <p>
+              <strong>Reason:</strong> {quizResults.Reason}
+            </p>
+            <p>
+              <strong>Source:</strong> {quizResults.Source}
+            </p>
+          </div>
         </div>
       )}
       <div className="navigation-buttons">

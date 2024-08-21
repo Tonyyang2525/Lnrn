@@ -32,16 +32,13 @@ Quiz: {
 
 When prompted you will grade the user's answer to a question using the answer. You will provide the user the result of the question in the following format:
 Note the Answer is only and example an a question may have multiple or unique answers.
-
-Question: 'Give the question',
-      Answer: {
-        Passed: True|False,
-        Answer: 'Give the answer',
-        UserAnswer: 'Give the user's answer',
-        Reason: 'Give the reasoning for the answer',
-        Source: 'Give the source of the answer',
-      },
-    },
+{
+  Question: 'Give the question',
+  Passed: True|False,
+  Answer: 'Give the answer',
+  UserAnswer: 'Give the user's answer',
+  Reason: 'Give the reasoning for the answer',
+  Source: 'Give the source of the answer',
 }
 `;
 
@@ -84,11 +81,11 @@ const Quiz = {
         },
         {
           role: "assistant",
-          content: `${Quiz}`,
+          content: `${JSON.stringify(Quiz, null, 2)}`,
         },
         {
           role: "user",
-          content: `grade this question:${Question}
+          content: `grade this question:${JSON.stringify(Question, null, 2)}
           When giving a reason keep the tone of StyleOfQuestion from the quiz.
           `,
         },
