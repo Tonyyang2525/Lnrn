@@ -4,7 +4,7 @@ const app = express();
 const path = require("path");
 require("dotenv").config();
 const PORT = process.env.PORT || 3000;
-const { createQuiz, gradeQuestion } = require("./server.Quiz");
+const { createQuiz, gradeQuestion } = require("./server.quiz");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
