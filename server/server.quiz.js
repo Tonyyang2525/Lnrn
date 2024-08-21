@@ -30,16 +30,10 @@ Quiz: {
   ],
 }
 
-When prompted you will compare the user's answer and the correct answer and provide the user the result of the quiz in the following format: 
+When prompted you will grade the user's answer to a question using the answer. You will provide the user the result of the question in the following format:
+Note the Answer is only and example an a question may have multiple or unique answers.
 
-Quiz: {
-  Topic: 'Give the topic of the quiz',
-  Expertise: 'Give the expertise of the quiz',
-  NumberOfQuestions: 'Give the number of questions in the quiz',
-  StyleOfQuestion: 'Give the style of question in the quiz',
-  Questions: [
-    {
-      Question: 'Give the question',
+Question: 'Give the question',
       Answer: {
         Passed: True|False,
         Answer: 'Give the answer',
@@ -48,23 +42,6 @@ Quiz: {
         Source: 'Give the source of the answer',
       },
     },
-    {
-      Question: 'Give the question',
-      Answer: {
-        Passed: True|False,
-        Answer: 'Give the answer',
-        UserAnswer: 'Give the user's answer',
-        Reason: 'Give the reasoning for the answer',
-        Source: 'Give the source of the answer',
-      },
-    },
-  ],
-
-  Grade: {
-    Score: 'Give the score',
-    Total: 'Give the total number of questions',
-    Percentage: 'Give the percentage of the score',
-  },
 }
 `;
 
@@ -97,8 +74,8 @@ const Quiz = {
     console.log(chatCompletion.choices[0].message.content);
     res.json({ results: chatCompletion.choices[0].message.content });
   },
-  gradeQuiz: async (req, res) => {
-    const { Quiz } = req.body;
+  gradeQuestion: async (req, res) => {
+    const { Quiz, Question } = req.body;
     const chatCompletion = await openai.chat.completions.create({
       messages: [
         {
@@ -106,9 +83,13 @@ const Quiz = {
           content: systemMessage,
         },
         {
+          role: "assistant",
+          content: `${Quiz}`,
+        },
+        {
           role: "user",
-          content: `Grade the following quiz:
-          Quiz: ${Quiz}
+          content: `grade this question:${Question}
+          When giving a reason keep the tone of StyleOfQuestion from the quiz.
           `,
         },
       ],

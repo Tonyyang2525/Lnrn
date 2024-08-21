@@ -1,5 +1,7 @@
 import React from "react";
-export default function footer() {
+import { Link } from "react-router-dom";
+
+export default function Footer() {
   return (
     <>
       <footer className="page-footer blue">
@@ -10,7 +12,7 @@ export default function footer() {
               <p className="grey-text text-lighten-4">
                 Embrace the power of our app and unlock the secrets of the
                 universe, one quiz at a time. As always say, 'Yesterday is
-                history, tomorrow is a mystery,but today is a gift. That is why
+                history, tomorrow is a mystery, but today is a gift. That is why
                 we call it the present.'
               </p>
             </div>
@@ -18,19 +20,19 @@ export default function footer() {
               <h5 className="white-text">Links</h5>
               <ul>
                 <li>
-                  <a className="grey-text text-lighten-3" href="#!">
+                  <Link className="grey-text text-lighten-3" to="/">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="grey-text text-lighten-3" href="#!">
+                  <Link className="grey-text text-lighten-3" to="/quiz">
                     Quiz Generator
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="grey-text text-lighten-3" href="#!">
+                  <Link className="grey-text text-lighten-3" to="/account">
                     Account
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
