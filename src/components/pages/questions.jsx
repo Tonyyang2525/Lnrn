@@ -37,6 +37,7 @@ export default function Questions() {
     // Ideally, send userAnswer to your backend API to grade it
     try {
       const currentQuestion = questions[currentQuestionIndex];
+      console.log(questions);
       const quiz = {
         Topic: quizData.Topic,
         Expertise: quizData.Expertise,
@@ -50,6 +51,7 @@ export default function Questions() {
           Source: q.Source,
         })),
       };
+      console.log("Grading quiz:", quiz);
 
       // Example API call
       const response = await fetch("http://localhost:3000/api/gradeQuiz", {
@@ -62,6 +64,7 @@ export default function Questions() {
       });
 
       const data = await response.json();
+      console.log("Quiz results:", data.results);
       setQuizResults(data.results);
       setShowResults(true);
     } catch (error) {
@@ -110,6 +113,7 @@ export default function Questions() {
         SUBMIT ANSWER
       </button>
       {feedback && <p>{feedback}</p>}
+      {console.log(quizResults)}
       {showResults && quizResults && (
         <div className="results-section">
           <h3>Results</h3>
