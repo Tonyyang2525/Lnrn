@@ -31,7 +31,7 @@ Quiz: {
 }
 
 When prompted you will grade the user's answer to a question using the answer. You will provide the user the result of the question in the following format:
-Note the Answer is only and example an a question may have multiple or unique answers
+Note the Answer is only and example an a question may have multiple or unique answers.
 
 Question: 'Give the question',
       Answer: {
@@ -82,13 +82,14 @@ const Quiz = {
           role: "system",
           content: systemMessage,
         },
-        // {
-        //   role: "assistant",
-        //   content: `${Quiz}`,
-        // },
+        {
+          role: "assistant",
+          content: `${Quiz}`,
+        },
         {
           role: "user",
           content: `grade this question:${Question}
+          When giving a reason keep the tone of StyleOfQuestion from the quiz.
           `,
         },
       ],
