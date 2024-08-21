@@ -1,5 +1,45 @@
+/* results.css */
+
+/* Base styling */
 .results-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  margin-bottom: 15%;
+  padding: 20px; /* Adding padding for better spacing */
+  box-sizing: border-box;
+}
+
+.results-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center; /* Center-align the text */
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .results-container h2 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .results-container {
+    padding: 15%;
+  }
+
+  .results-container h2 {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .results-container {
+    padding: 10px;
+  }
+
+  .results-container h2 {
+    font-size: 1rem;
+  }
 }
