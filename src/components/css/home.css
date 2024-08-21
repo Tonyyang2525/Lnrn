@@ -1,108 +1,132 @@
 .home-container {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.home-image {
+  max-width: 30%;
+  height: auto;
+  margin-bottom: 20px;
+  background-color: #063661;
+  top: 30px;
+}
+
+.home-text {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: normal;
+  color: gray;
+  max-width: 60%;
+}
+
+.home-button {
+  background-color: #3d9764;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.home-button:hover {
+  background-color: #02513c;
+}
+
+.home-features {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin-top: 40px;
+  padding-bottom: 50px;
+}
+
+.feature {
+  flex: 1;
+  margin: 0 20px;
+  max-width: 300px;
+  text-align: center;
+}
+
+.icons {
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.heading-tag {
+  text-align: center;
+  font-size: 20px; /* Increase font size */
+  margin-bottom: 10px;
+}
+
+.feature-description {
+  text-align: left; /* Align text to the left*/
+  font-size: 18px;
+  color: #666;
+  margin-top: 5px;
+  line-height: 1.6; /* Adjust line height for better readability */
+  padding-left: 10px; /* Padding ensure text aligns properly */
+  padding-right: 10px;
+  max-width: 100%;
+}
+
+/* Media Queries */
+/* - Stack the feature boxes vertically.
+   - Center-align the stacked boxes and add spacing between them. */
+@media (max-width: 1024px) {
+  .home-features {
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 40px;
   }
-  
-  .home-image {
-    max-width: 30%;
-    height: auto;
-    margin-bottom: 20px;
-    background-color: #063661;
-    top: 30px;
-  }
-  
-  .home-text {
-    font-size: 24px;
-    margin-bottom: 20px;
-    font-weight: normal;
-    color: gray;
-    max-width: 60%;
-  }
-  
-  .home-button {
-    background-color: #3d9764;
-    color: #fff;
-    padding: 15px 30px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    margin-bottom: 50px;
-    margin-top: 30px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  .home-button:hover {
-    background-color: #02513c;
-  }
-  
-  .home-features {
-    display: grid;
-    grid-template-columns: repeat(3, 300px);
-    justify-content: space-around;
-    margin-left: 300px;
-    margin-top: 40px;
-    padding-bottom: 50px;
-  }
-  
+
   .feature {
-    align-items: center;
-    transform: translateX(-80px);
+    margin-bottom: 40px;
   }
-  
-  .icons{
+}
+
+/*   - Reduce the size of the main image.
+     - Ensure the text is aligned to the left and slightly narrower. */
+@media (max-width: 768px) {
+  .home-image {
+    max-width: 50%;
+  }
+
+  .home-features {
+    width: 90%;
+  }
+
+  .feature-description {
+    text-align: left;
+    max-width: 90%;
+  }
+}
+
+/*   - Adjust the padding and font size of the button for smaller screens.
+     - Reduce the size of the icons.
+     - Adjust the font size of headings and feature descriptions for readability. */
+@media (max-width: 480px) {
+  .home-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .icons {
     height: 40px;
-    margin-right: 80px;
   }
 
   .heading-tag {
-    text-align: center;
-    font-size: 15px;
-    margin-bottom: 15px;
-    margin-right: 100px;
+    font-size: 18px;
   }
-  
+
   .feature-description {
-    display: flex;
-    flex-direction: center;
-    align-items: center;
-    text-align: left;
-    font-size: 15px;
-    margin-bottom: 15px;
-    font-size: 14px;
-    color: #666;
-    margin-top: 5px;
-    text-align: left;
-    max-width: 80%;
-    width: 100%;
+    font-size: 16px;
+    max-width: 100%;
   }
-  
-  @media (max-width: 667px) {
-    .home-image {
-      max-width: 50%;
-      top: 0px;
-    }
-    .feature {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 20px 0;
-      transform: translateX(-5px);
-    }
-    .home-features {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      max-width: 500px;
-    }
-  
-    .feature-description {
-      text-align: center;
-    }
-  }
-  
+}
