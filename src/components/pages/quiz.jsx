@@ -23,7 +23,7 @@ export default function Quiz() {
       styleOfQuestion,
     };
     axios
-      .post("http://localhost:3000/api/createQuiz", data)
+      .post("/api/createQuiz", data)
       .then((response) => {
         const data = response.data.results;
         console.log(response);
