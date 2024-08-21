@@ -57,7 +57,7 @@ export default function Questions() {
       console.log("Grading quiz:", quiz);
       console.log("Quwstion:", quiz.Questions[currentQuestionIndex]);
       // Example API call
-      const response = await fetch("http://localhost:3000/api/gradeQuestion", {
+      const response = await fetch("/api/gradeQuestion", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
