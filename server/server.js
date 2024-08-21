@@ -4,7 +4,7 @@ const app = express();
 const path = require("path");
 require("dotenv").config();
 const PORT = process.env.PORT || 3000;
-const { createQuiz, gradeQuiz } = require("./server.Quiz");
+const { createQuiz, gradeQuestion } = require("./server.Quiz");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -18,7 +18,7 @@ app.get("*", (req, res) => {
 //GPT API
 router.post("/createQuiz", createQuiz);
 
-router.post("/gradeQuiz", gradeQuiz);
+router.post("/gradeQuestion", gradeQuestion);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port http://localhost:${PORT}`);
