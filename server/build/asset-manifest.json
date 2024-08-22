@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2e1b51a3.css",
+    "main.js": "/static/js/main.db0ec5d4.js",
+    "static/media/image.png": "/static/media/image.1f404f5bb4e637bd9009.png",
+    "index.html": "/index.html",
+    "static/media/money-bills-solid.svg": "/static/media/money-bills-solid.d0868d3a05d0dc3ac1f57f62b101da6a.svg",
+    "static/media/bolt-solid.svg": "/static/media/bolt-solid.b5ec2124749ea4b751ffe8527f5c91fc.svg",
+    "static/media/user-solid.svg": "/static/media/user-solid.5963aa0c4a8a3598e91eef2002c97e53.svg",
+    "main.2e1b51a3.css.map": "/static/css/main.2e1b51a3.css.map",
+    "main.db0ec5d4.js.map": "/static/js/main.db0ec5d4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2e1b51a3.css",
+    "static/js/main.db0ec5d4.js"
+  ]
+}

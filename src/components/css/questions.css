@@ -39,6 +39,14 @@ button {
 button:hover {
   background-color: #1976d2;
 }
+.result {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+}
+.hidden {
+  display: none;
+}
 
 @media (max-width: 600px) {
   h1 {
