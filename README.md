@@ -1,71 +1,101 @@
-# Getting Started with Create React App
+# LrnR APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+LrnR is a responsive web application designed for users who want to create customized quizzes, answer quiz questions, and view results. The application was originally developed using jQuery and GO, but has been rewritten in Node.js and React to better align with modern development practices. The project integrates with the OpenAI API to generate and grade quizzes based on user inputs and utilizes Materialize CSS for styling.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Technology Stack](#technology-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Integration](#api-integration)
+- [Accessibility](#accessibility)
+- [Responsiveness](#responsiveness)
+- [Known Limitations](#known-limitations)
+- [Future Enhancements](#future-enhancements)
 
-### `npm start`
+## Project Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+LrnR was initially developed by RV's AI team using jQuery and GO to leverage the ChatGPT API for creating customized quizzes. Due to leadership's directive, the application has been rewritten in Node.js and React, making it more scalable and maintainable. The new version of LrnR retains all the core functionality of the original application while providing an improved user experience and a modern look using Materialize CSS.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- Quiz Generation (Categories) Page: Users can create quizzes by selecting topic, expertise, number of questions, and style of questions. Generated quizzes include a title, description, and a list of questions.
+- Quiz Page: Users are presented with one question at a time and can submit their answers.
+- Results Page: A static recreation of the original Results Page.
+- Home Page: A static recreation of the original Home Page.
+- Account Page: A static recreation of the original Account Page.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technology Stack
 
-### `npm run build`
+- Frontend: React, HTML, CSS, Materialize CSS
+- Backend: Node.js, Express.js
+- API: OpenAI API (for quiz generation and grading)
+- Environment Management: dotenv
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To set up the project locally, follow these steps:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
 
-### `npm run eject`
+   ```
+   git clone https://github.com/Tonyyang2525/Lnrn.git
+   cd Lnrn
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Install dependencies
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```
+   npm install
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Set up environment variables:
+   Access .env file in the server folder.
+   Add your OpenAI API key
+   ```
+   OPENAI_API_KEY=your-api-key-here
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Usage
 
-## Learn More
+1. Starting the Application
+   Start the React application:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```
+   npm start
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Start the server
+   Navigate to the server directory and then run it
 
-### Code Splitting
+   ```
+   cd server
+   node server.js
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. Access the Application
+   Open your browser and navigate to http://localhost:3000.
 
-### Analyzing the Bundle Size
+## API Integration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The application uses the OpenAI API to generate and grade quizzes. The API is integrated into the backend, where it handles the creation of quizzes and grading of answers based on user input. To obtain an OpenAI API key, visit [OpenAI](https://openai.com).
 
-### Making a Progressive Web App
+## Accessibility
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The website is designed to meet HTML & CSS validity and WCAG 2.0 AA web accessibility standards. This ensures that the site is usable by as many people as possible, including those with disabilities.
 
-### Advanced Configuration
+## Responsiveness
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+LrnR is fully responsive, ensuring a seamless experience across mobile, tablet, and desktop devices. Materialize CSS is used to provide a modern and responsive design.
 
-### Deployment
+## Known Limitations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The Results Page, Home Page, and Account Page are currently static recreations of the original designs. This is due to the focus on the core functionality of the application during the rewrite. Future updates will aim to make these pages dynamic.
 
-### `npm run build` fails to minify
+## Future Enhancements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# Lnrn
+- Implementing user authentication and quiz statistics tracking.
+- Adding more customization options for quiz generation.
+- Expanding accessibility features.
