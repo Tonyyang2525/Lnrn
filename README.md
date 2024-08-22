@@ -1,111 +1,101 @@
-Lnrn
-LrnR is a responsive web application that allows users to create customized quizzes, answer quiz questions, and view results. Originally developed using jQuery and GO, the application has been rewritten in Node.js and React to better align with modern development practices. The project integrates with the OpenAI API to generate and grade quizzes based on user inputs and utilizes Materialize CSS for styling.
+# LrnR APP
 
-- Table of Contents
-- Project Overview
-- Features
-- Technology Stack
-- Installation
-- Usage
-- API Integration
-- Accessibility
-- Responsiveness
-- Known Limitations
-- Future Enhancements
+LrnR is a responsive web application designed for users who want to create customized quizzes, answer quiz questions, and view results. The application was originally developed using jQuery and GO, but has been rewritten in Node.js and React to better align with modern development practices. The project integrates with the OpenAI API to generate and grade quizzes based on user inputs and utilizes Materialize CSS for styling.
 
-  Project Overview
-  LrnR was initially developed by RV's AI team using jQuery and GO to leverage the ChatGPT API for creating customized quizzes. Due to leadership's directive, the application has been rewritten in Node.js and React, making it more scalable and maintainable. The new version of LrnR retains all the core functionality of the original application while providing an improved user experience and a modern look using Materialize CSS.
+## Table of Contents
 
-Features
-Quiz Generation (Categories) Page
-Users can create quizzes by selecting:
-Topic
-Expertise
-Number of questions
-Style of questions
-Generated quizzes include a title, description, and a list of questions.
-Quiz Page
-Users are presented with one question at a time.
-Users can submit their answers.
-Results Page
-A static recreation of the original Results Page.
-Home Page
-A static recreation of the original Home Page.
-Account Page
-A static recreation of the original Account Page.
-Technology Stack
-Frontend: React, HTML, CSS, Materialize CSS
-Backend: Node.js, Express.js
-API: OpenAI API (for quiz generation and grading)
-Environment Management: dotenv
-Installation
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Technology Stack](#technology-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Integration](#api-integration)
+- [Accessibility](#accessibility)
+- [Responsiveness](#responsiveness)
+- [Known Limitations](#known-limitations)
+- [Future Enhancements](#future-enhancements)
+
+## Project Overview
+
+LrnR was initially developed by RV's AI team using jQuery and GO to leverage the ChatGPT API for creating customized quizzes. Due to leadership's directive, the application has been rewritten in Node.js and React, making it more scalable and maintainable. The new version of LrnR retains all the core functionality of the original application while providing an improved user experience and a modern look using Materialize CSS.
+
+## Features
+
+- Quiz Generation (Categories) Page: Users can create quizzes by selecting topic, expertise, number of questions, and style of questions. Generated quizzes include a title, description, and a list of questions.
+- Quiz Page: Users are presented with one question at a time and can submit their answers.
+- Results Page: A static recreation of the original Results Page.
+- Home Page: A static recreation of the original Home Page.
+- Account Page: A static recreation of the original Account Page.
+
+## Technology Stack
+
+- Frontend: React, HTML, CSS, Materialize CSS
+- Backend: Node.js, Express.js
+- API: OpenAI API (for quiz generation and grading)
+- Environment Management: dotenv
+
+## Installation
+
 To set up the project locally, follow these steps:
 
 1. Clone the repository:
+
+   ```
    git clone https://github.com/Tonyyang2525/Lnrn.git
    cd Lnrn
+   ```
 
 2. Install dependencies
+
+   ```
    npm install
+   ```
 
-3.Set up environment variables:
-Access .env file in the server folder.
-Add your OpenAI API key
-OPENAI_API_KEY=your-api-key-here
+3. Set up environment variables:
+   Access .env file in the server folder.
+   Add your OpenAI API key
+   ```
+   OPENAI_API_KEY=your-api-key-here
+   ```
 
-Usage
+## Usage
 
 1. Starting the Application
    Start the React application:
+
+   ```
    npm start
+   ```
 
 2. Start the server
    Navigate to the server directory and then run it
+
+   ```
    cd server
    node server.js
+   ```
 
 3. Access the Application
    Open your browser and navigate to http://localhost:3000.
 
-Routing
-Home Page: Accessible at /
-Account Page: Accessible at /account
-Quiz Generation Page: Accessible at /quiz
-Quiz Questions Page: Accessible at /questions
+## API Integration
 
-API Integration
-The application uses the OpenAI API to generate and grade quizzes. The API is integrated into the backend, where it handles the creation of quizzes and grading of answers based on user input.
+The application uses the OpenAI API to generate and grade quizzes. The API is integrated into the backend, where it handles the creation of quizzes and grading of answers based on user input. To obtain an OpenAI API key, visit [OpenAI](https://openai.com).
 
-Endpoints
-Create Quiz:
+## Accessibility
 
-URL: /api/createQuiz
-Method: POST
-Body Parameters:
-topic
-expertise
-numberOfQuestions
-styleOfQuestion
-Response: JSON object containing the generated quiz.
-Grade Question:
-
-URL: /api/gradeQuestion
-Method: POST
-Body Parameters:
-Quiz (JSON object of the quiz)
-Question (The specific question to be graded)
-Response: JSON object containing the grading result.
-
-Accessibility
 The website is designed to meet HTML & CSS validity and WCAG 2.0 AA web accessibility standards. This ensures that the site is usable by as many people as possible, including those with disabilities.
 
-Responsiveness
+## Responsiveness
+
 LrnR is fully responsive, ensuring a seamless experience across mobile, tablet, and desktop devices. Materialize CSS is used to provide a modern and responsive design.
 
-Known Issues and Limitations
-The Results Page, Home Page, and Account Page are static recreations of the original designs.
+## Known Limitations
 
-Future Enhancements
-Implementing user authentication and quiz statistics tracking.
-Adding more customization options for quiz generation.
-Expanding accessibility features.
+The Results Page, Home Page, and Account Page are currently static recreations of the original designs. This is due to the focus on the core functionality of the application during the rewrite. Future updates will aim to make these pages dynamic.
+
+## Future Enhancements
+
+- Implementing user authentication and quiz statistics tracking.
+- Adding more customization options for quiz generation.
+- Expanding accessibility features.
